@@ -22,8 +22,14 @@ export default function Home({
   // const [count, setCount] = useAtom(countAtom);
   // const doubleCount = useAtomValue(doubleAtom);
 
-  const { checkOracle, dateTimeCountdown, timeUntil, canUpdate, canConsult } =
-    usePriceOracleTime();
+  const {
+    checkOracle,
+    dateTimeCountdown,
+    timeUntil,
+    canConsult,
+    isLoading,
+    currentNetwork,
+  } = usePriceOracleTime();
   useEffect(() => {
     checkOracle();
   }, [checkOracle]);
@@ -37,16 +43,24 @@ export default function Home({
       </Head>
       <h1 className={styles.title}>Price Oracle Health Status</h1>
       <main className={styles.main}>
-        <>
-          <h3>Can Consult Prices:</h3>
-          <div>{canConsult ? "Yes" : "No"}</div>
-        </>
-        {dateTimeCountdown > 0 && (
+        {isLoading ? (
+          <h3>Loading...</h3>
+        ) : (
           <>
-            <h3>Need wait until:</h3>
-            <div>{timeConverter(dateTimeCountdown)}</div>
-            <h3>When:</h3>
-            <div>{timeUntil}</div>
+            <>
+              <h3>Network:</h3>
+              <div>{currentNetwork}</div>
+              <h3>Can Consult Prices:</h3>
+              <div>{canConsult ? "Yes" : "No"}</div>
+            </>
+            {dateTimeCountdown > 0 && (
+              <>
+                <h3>Need wait until:</h3>
+                <div>{timeConverter(dateTimeCountdown)}</div>
+                <h3>When:</h3>
+                <div>{timeUntil}</div>
+              </>
+            )}
           </>
         )}
         {/* <button onClick={checkOracle}>Update</button> */}
