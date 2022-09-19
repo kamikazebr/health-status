@@ -25,6 +25,9 @@
   justify-content: center;
   align-items: center;
 }
+.network_link{
+  padding: 1em;
+}
 
 .footer a {
   display: flex;

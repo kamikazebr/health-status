@@ -19,7 +19,7 @@ function timesFromNow(dateTime: number) {
 
 let interval = 0;
 
-let NETWORKS = {
+export const NETWORKS = {
   gnosis: {
     rpcProvider: "https://rpc.gnosischain.com",
     chainId: 100,
