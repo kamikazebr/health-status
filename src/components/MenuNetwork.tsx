@@ -3,18 +3,16 @@ import { NETWORKS } from "../hooks/usePriceOracleTime";
 
 export default function MenuNetwork() {
   return (
-    <div className="menu">
+    <div>
       {Object.keys(NETWORKS).map((network) => {
         return (
-          <>
-            <a
-              className="network_link"
-              key={network}
-              href={`?network=${network}`}
-            >
-              {network}
-            </a>
-          </>
+          <a
+            className="network_link"
+            key={network}
+            href={`?network=${network}`}
+          >
+            {network}
+          </a>
         );
       })}
     </div>

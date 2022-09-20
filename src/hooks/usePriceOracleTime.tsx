@@ -5,8 +5,7 @@ import React, { useCallback, useState } from "react";
 import jsonInterface from "../abi/oracle.json";
 
 const dateTimeCountdownAtom = atom(0);
-const timeUntilAtom = atom<string | undefined>(undefined);
-
+const timeUntilAtom = atom<string | undefined>("");
 export function timeConverter(unixTimestamp: number) {
   return new Intl.DateTimeFormat("default", {
     dateStyle: "long",
