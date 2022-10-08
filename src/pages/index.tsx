@@ -15,7 +15,6 @@ import Profile from "../components/Profile";
 export default function Home() {
   const router = useRouter();
   const { network } = router.query;
-
   const {
     checkOracle,
     dateTimeCountdown,
@@ -27,7 +26,7 @@ export default function Home() {
 
   useEffect(() => {
     checkOracle(network as NetworkType);
-  }, [checkOracle]);
+  }, [checkOracle, network]);
 
   return (
     <LayoutContainer>

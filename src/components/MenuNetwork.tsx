@@ -6,13 +6,16 @@ export default function MenuNetwork() {
     <div>
       {Object.keys(NETWORKS).map((network) => {
         return (
-          <a
-            className="network_link"
-            key={network}
-            href={`?network=${network}`}
-          >
-            {network}
-          </a>
+          <>
+            <a
+              className="network_link"
+              key={network}
+              href={`?network=${network}`}
+            >
+              {network}
+            </a>
+            <span> </span>
+          </>
         );
       })}
     </div>
