@@ -5,8 +5,7 @@ import React, { useCallback, useState } from "react";
 import jsonInterface from "../abi/oracle.json";
 
 const dateTimeCountdownAtom = atom(0);
-const timeUntilAtom = atom<string | undefined>(undefined);
-
+const timeUntilAtom = atom<string | undefined>("");
 export function timeConverter(unixTimestamp: number) {
   return new Intl.DateTimeFormat("default", {
     dateStyle: "long",
@@ -19,7 +18,7 @@ function timesFromNow(dateTime: number) {
 
 let interval = 0;
 
-let NETWORKS = {
+export const NETWORKS = {
   gnosis: {
     rpcProvider: "https://rpc.gnosischain.com",
     chainId: 100,
@@ -32,10 +31,18 @@ let NETWORKS = {
     rpcProvider:
       "https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
     chainId: 4,
-    oracleAddress: "0xa87F58dBBE3A4D01d7F776e02b4dd3237f598095", //Rinkeby
-    honeyTokenPair: "0x355339DDebf3471A6AE1F9E7194C7AEe30ad6223", // Rinkeby
-    honeyToken: "0x3050E20FAbE19f8576865811c9F28e85b96Fa4f9", // Rinkeby
-    stableToken: "0x531eab8bB6A2359Fe52CA5d308D85776549a0af9", // Rinkeby
+    oracleAddress: "0xa87f58dbbe3a4d01d7f776e02b4dd3237f598095", //Rinkeby
+    honeyTokenPair: "0x355339ddebf3471a6ae1f9e7194c7aee30ad6223", // Rinkeby
+    honeyToken: "0x3050e20fabe19f8576865811c9f28e85b96fa4f9", // Rinkeby
+    stableToken: "0x531eab8bb6a2359fe52ca5d308d85776549a0af9", // Rinkeby
+  },
+  polygon: {
+    rpcProvider: "https://polygon-rpc.com",
+    chainId: 137,
+    honeyTokenPair: "0x72acef580b77fa28cd906ca3e1c0b971ebd82ab2",
+    honeyToken: "0xb371248dd0f9e4061ccf8850e9223ca48aa7ca4b",
+    oracleAddress: "0x15f627b9c47bbfbbc2194c9a8db2e722e090a690",
+    stableToken: "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
   },
 };
 
