@@ -27,15 +27,6 @@ export const NETWORKS = {
     honeyToken: "0x71850b7e9ee3f13ab46d67167341e4bdc905eef9", // Gnosis
     stableToken: "0xe91d153e0b41518a2ce8dd3d7944fa863463a97d", // Gnosis
   },
-  rinkeby: {
-    rpcProvider:
-      "https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
-    chainId: 4,
-    oracleAddress: "0xa87f58dbbe3a4d01d7f776e02b4dd3237f598095", //Rinkeby
-    honeyTokenPair: "0x355339ddebf3471a6ae1f9e7194c7aee30ad6223", // Rinkeby
-    honeyToken: "0x3050e20fabe19f8576865811c9f28e85b96fa4f9", // Rinkeby
-    stableToken: "0x531eab8bb6a2359fe52ca5d308d85776549a0af9", // Rinkeby
-  },
   goerli: {
     rpcProvider: "https://goerli.infura.io/v3/ba8a73e283eb4b9eafd25f5fdbfc1717",
     chainId: 5,
