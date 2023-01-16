@@ -36,6 +36,14 @@ export const NETWORKS = {
     honeyToken: "0x3050e20fabe19f8576865811c9f28e85b96fa4f9", // Rinkeby
     stableToken: "0x531eab8bb6a2359fe52ca5d308d85776549a0af9", // Rinkeby
   },
+  goerli: {
+    rpcProvider: "https://goerli.infura.io/v3/ba8a73e283eb4b9eafd25f5fdbfc1717",
+    chainId: 5,
+    oracleAddress: "0x732cf7ff8a3df9daedc283587be2051dc67ac6c3",
+    honeyTokenPair: "0x8d76f17967c94cfbcd756df37c5fe44ec9dd7ab4",
+    honeyToken: "0x2d467a24095b262787f58ce97d9b130ce7232b57", //
+    stableToken: "0xdc31ee1784292379fbb2964b3b9c4124d8f89c60", //
+  },
   polygon: {
     rpcProvider: "https://polygon-rpc.com",
     chainId: 137,
